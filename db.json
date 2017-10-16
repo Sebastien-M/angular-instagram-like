@@ -1,0 +1,27 @@
+{
+    "posts":[],
+    "users":[
+        {
+            "username":"seb",
+            "email":"seb.mandaba@gmail.com",
+            "password":"1234"
+        },
+        {
+            "username":"toto",
+            "email":"toto.tata@gmail.com",
+            "password":"1234"
+        }
+    ],
+    "posts":[
+        {
+            "description":"A cat in a box",
+            "likes":"4",
+            "picture":"http://chatdebile.com/wp-content/uploads/2016/08/cat-sitting-in-a-box-labeled-only-dumb-cats-sit-here.jpg"
+        },
+        {
+            "description":"Cat daddy taking care of his son",
+            "likes":"12",
+            "picture":"https://i.pinimg.com/736x/82/3f/c3/823fc366ca6d39231f2371e747c832cb--human-eye-face-swaps.jpg"
+        }
+    ]
+}
