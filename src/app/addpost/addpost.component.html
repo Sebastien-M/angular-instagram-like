@@ -1,0 +1,14 @@
+<div class="login-form col-md-6 col-md-offset-3">
+    <div class="form-group">
+      <input [(ngModel)]="nouveauPost.description" type="text" class="form-control login-field" value="" placeholder="Description" id="login-name">
+      <label class="login-field-icon fui-new" for="login-name"></label>
+    </div>
+  
+    <div class="form-group">
+      <input [(ngModel)]="nouveauPost.picture" type="text" class="form-control login-field" value="" placeholder="Image link" id="login-pass">
+      <label class="login-field-icon fui-photo" for="login-pass"></label>
+    </div>
+  
+    <button (click)="addPost()" class="btn btn-primary btn-lg btn-block" href="#">Add picture</button>
+  </div>
+  

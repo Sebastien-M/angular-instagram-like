@@ -9,12 +9,15 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.route';
 import { APP_BASE_HREF } from '@angular/common';
 import { PostsComponent } from './posts/posts.component';
+import { PostService } from './shared/post/post.service';
+import { AddpostComponent } from './addpost/addpost.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConnexionComponent,
-    PostsComponent
+    PostsComponent,
+    AddpostComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,7 @@ import { PostsComponent } from './posts/posts.component';
   ],
   providers: [
     UserService,
+    PostService,
     { provide: APP_BASE_HREF, useValue: '/' }
     
   ],
