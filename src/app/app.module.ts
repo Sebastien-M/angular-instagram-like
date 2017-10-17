@@ -11,6 +11,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { PostsComponent } from './posts/posts.component';
 import { PostService } from './shared/post/post.service';
 import { AddpostComponent } from './addpost/addpost.component';
+import { AuthService } from './shared/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AddpostComponent } from './addpost/addpost.component';
   providers: [
     UserService,
     PostService,
-    { provide: APP_BASE_HREF, useValue: '/' }
+    { provide: APP_BASE_HREF, useValue: '/' },
+    AuthService
     
   ],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {} from ''
 import { UserService } from '../shared/user/user.service';
 import { User } from '../shared/user';
+import { AuthService } from '../shared/auth/auth.service';
 
 @Component({
   selector: 'app-connexion',
@@ -14,26 +14,15 @@ export class ConnexionComponent implements OnInit {
   passwordInput:string;
   users:User[];
   
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService, private authService:AuthService) { }
 
   ngOnInit() {
   }
 
   connect(){
-  let response = this.userService.getUsers().subscribe((response)=>{
-    let userslength:number = Object.keys(response).length;
-    for (let i = 0; i < userslength; i++) {
-      if(this.usernameInput === response[i].username && this.passwordInput === response[i].password){
-        this.conected = true;
-        console.log("connected");
-        
-      }
-      else{
-        this.conected = false;
-      }
-      
-    }
-  });
-  
+    // console.log(this.authService.user);
+    this.authService.login(this.usernameInput,this.passwordInput).subscribe((result)=>{
+      console.log(result);
+    });
   }
 }
