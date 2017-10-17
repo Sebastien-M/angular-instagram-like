@@ -9,20 +9,23 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  user:Observable<User> = this.authservice.user;
+  user;
 
-  constructor(private authservice:AuthService){
+  constructor(private authservice: AuthService) {
   }
 
   ngOnInit() {
+    this.user = this.authservice.user;
   }
-  
-logout(){
-  this.authservice.logout();
-}
 
-  // show(){
-  //   console.log(this.user);
-  // }
+  logout() {
+    this.authservice.logout();
+  }
+
+  show() {
+    this.user.subscribe((resp) => {
+      console.log(resp);
+    });
+  }
 
 }

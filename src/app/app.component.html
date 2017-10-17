@@ -11,8 +11,7 @@
        </ul>
        <ul class="nav navbar-nav navbar-right">
           <li *ngIf="(user | async) === null"><a  routerLink="connect/" routerLinkActive="active">Connection</a></li>
-          <li *ngIf="(user |async ) !== null"><a  routerLink="/" routerLinkActive="active" (click)="logout">Logout</a></li>
-          <button (click)="logout">show</button>
+          <li *ngIf="(user |async ) !== null"><a  routerLink="/" routerLinkActive="active" (click)="logout()">Logout</a></li>
        </ul>
     </div>
   </nav>

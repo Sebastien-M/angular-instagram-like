@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../shared/post/post.service';
 import { Post } from '../shared/post';
+import { AuthService } from '../shared/auth/auth.service';
 
 @Component({
   selector: 'app-posts',
@@ -9,11 +10,13 @@ import { Post } from '../shared/post';
 })
 export class PostsComponent implements OnInit {
   posts:Post[] = [];
+  user;
 
-  constructor(private postService:PostService) { }
+  constructor(private postService:PostService, private authservice:AuthService) { }
 
   ngOnInit() {
     this.getPosts();
+    this.user = this.authservice.user;
   }
 
   getPosts(){

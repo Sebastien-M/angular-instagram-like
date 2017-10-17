@@ -12,7 +12,8 @@ export class AddpostComponent implements OnInit {
   nouveauPost = {
     description:"",
     likes:0,
-    picture:""
+    picture:"",
+    id:null
 
   }
   constructor(private postService:PostService) { }
@@ -20,8 +21,14 @@ export class AddpostComponent implements OnInit {
   ngOnInit() {
   }
   addPost(){
-    this.postService.addPost(this.nouveauPost).subscribe((answer)=>{
-      console.log(answer);
+    this.postService.getPosts().subscribe((resp)=>{
+      let len = Object.keys(resp).length;
+      this.nouveauPost.id = len;
+      this.postService.addPost(this.nouveauPost).subscribe((answer)=>{
+        console.log(answer);
+      });
     });
+
+    
   }
 }

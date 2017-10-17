@@ -9,7 +9,7 @@ import { AuthService } from '../shared/auth/auth.service';
   styleUrls: ['./connexion.component.css']
 })
 export class ConnexionComponent implements OnInit {
-  conected=false;
+  connected;
   usernameInput:string;
   passwordInput:string;
   users:User[];
@@ -17,6 +17,7 @@ export class ConnexionComponent implements OnInit {
   constructor(private userService:UserService, private authService:AuthService) { }
 
   ngOnInit() {
+    this.connected = this.authService.user;
   }
 
   connect(){
